@@ -20,7 +20,7 @@
 			value="<%=request.getAttribute("accountId")%>" />
 
 		<p>
-			대출 금액(원): <input type="number" name="loanAmount" min="0" step="10000"
+			대출 금액(만원): <input type="number" name="loanAmount" min="0" max="10000" step="1"
 				required>
 		</p>
 		<p>

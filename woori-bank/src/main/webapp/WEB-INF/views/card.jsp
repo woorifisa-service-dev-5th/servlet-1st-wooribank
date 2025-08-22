@@ -9,6 +9,6 @@
 </head>
 <body>
 	<a href="<%=request.getContextPath()%>/">&larr; 메인</a>
-	<h2>카드 상품</h2>
+	<h2>시간이 부족해서 만들지 못했습니다</h2>
 </body>
 </html>

@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Deposit {
-	private String key; // PK (예적금 ID)
+	private String deposit_key; // PK (예적금 ID)
 	private long itemId; // 상품 ID (무시 가능)
 	private String accountId; // 계좌 ID
 	private long amount; // 금액
@@ -14,9 +14,9 @@ public class Deposit {
 	public Deposit() {
 	}
 
-	public Deposit(String key, long itemId, String accountId, long amount, LocalDateTime maturityDate,
+	public Deposit(String deposit_key, long itemId, String accountId, long amount, LocalDateTime maturityDate,
 			boolean validDate) {
-		this.key = key;
+		this.deposit_key = deposit_key;
 		this.itemId = itemId;
 		this.accountId = accountId;
 		this.amount = amount;
@@ -25,11 +25,11 @@ public class Deposit {
 	}
 
 	public String getKey() {
-		return key;
+		return deposit_key;
 	}
 
-	public void setKey(String key) {
-		this.key = key;
+	public void setKey(String deposit_key) {
+		this.deposit_key = deposit_key;
 	}
 
 	public long getItemId() {

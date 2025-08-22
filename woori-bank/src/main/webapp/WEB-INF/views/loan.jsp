@@ -21,11 +21,7 @@
 		</ul>
 
 		<!-- 가입하기 -->
-		<form method="post"
-			action="<%=request.getContextPath()%>/loan/join">
-			<input type="hidden" name="productType" value="LOAN">
-			<button type="submit">가입하기</button>
-		</form>
+		<a href="<%=request.getContextPath()%>/loan/join">가입하기</a>
 
 		<p style="color: #666; margin-top: 8px;">※ 가입은 로그인 후 가능합니다.</p>
 	</div>

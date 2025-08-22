@@ -12,7 +12,7 @@
 		<input type="hidden" name="accountId"
 			value="<%=request.getAttribute("accountId")%>" />
 		<p>
-			금액: <input type="number" name="amount" min="0" step="1000" required />
+			금액(만원): <input type="number" name="amount" min="0" step="1" max="1000" required />
 		</p>
 		<p>
 			만기일: <input type="date" name="maturityDate" />

@@ -56,7 +56,7 @@ public class DepositJoinController extends HttpServlet {
 		d.setAmount(amount);
 		d.setMaturityDate(maturityDate);
 		d.setValidDate(false); // 가입 시 기본 false
-
+		System.out.println(d.getKey());
 		try {
 			depositDao.save(d);
 		} catch (SQLException e) {

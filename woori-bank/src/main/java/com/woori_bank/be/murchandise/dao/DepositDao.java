@@ -19,7 +19,7 @@ import com.woori_bank.be.util.init.ConnectionPool;
 public class DepositDao {
 	// INSERT
 	public Deposit save(Deposit d) throws SQLException {
-		final String sql = "INSERT INTO Deposit (`Key`, Item_id, account_id, amount, Field2, valid_date) "
+		final String sql = "INSERT INTO Deposit (deposit_key, Item_id, account_id, amount, maturityDate, valid) "
 				+ "VALUES (?, ?, ?, ?, ?, ?)";
 
 		try (Connection conn = ConnectionPool.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {

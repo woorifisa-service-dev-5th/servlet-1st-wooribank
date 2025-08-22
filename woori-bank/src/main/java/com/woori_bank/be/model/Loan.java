@@ -4,14 +4,15 @@ import java.time.LocalDateTime;
 
 public class Loan {
 	private String loanId; // loan_id (PK)
-	private long loanAmount; // loan_amount
-	private String loanStatus; // loan_status: ONGOING/PAID/DEFAULT
+	private Long loanAmount; // loan_amount (nullable → Long)
+	private String loanStatus; // loan_status: ONGOING / PAID / DEFAULT
 	private LocalDateTime loanDate; // loan_date
 	private Boolean guaranteeValid; // guarantee_valid
 	private String accountId; // account_id
-	private long itemId; // Item_id (상품ID, 지금은 0 사용)
-	private String clNumber; // cl_number (13자, 선택)
+	private Long itemId; // item_id (NOT NULL)
+	private String clNumber; // cl_number (최대 13자리)
 
+	// --- Getter / Setter ---
 	public String getLoanId() {
 		return loanId;
 	}
@@ -20,11 +21,11 @@ public class Loan {
 		this.loanId = loanId;
 	}
 
-	public long getLoanAmount() {
+	public Long getLoanAmount() {
 		return loanAmount;
 	}
 
-	public void setLoanAmount(long loanAmount) {
+	public void setLoanAmount(Long loanAmount) {
 		this.loanAmount = loanAmount;
 	}
 
@@ -60,11 +61,11 @@ public class Loan {
 		this.accountId = accountId;
 	}
 
-	public long getItemId() {
+	public Long getItemId() {
 		return itemId;
 	}
 
-	public void setItemId(long itemId) {
+	public void setItemId(Long itemId) {
 		this.itemId = itemId;
 	}
 
