@@ -14,6 +14,7 @@ public class AccountService {
 	private static AccountNumberGenerator accountNumberGenerator;
 	
 	public static long createAccount(long cliendId, AccountType type) {
+		
 		// 계좌 번호 생성 로직 -> 
 		String accountNumber = accountNumberGenerator.generate(type);
 		

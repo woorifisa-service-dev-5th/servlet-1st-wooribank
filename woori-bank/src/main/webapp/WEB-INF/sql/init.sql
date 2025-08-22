@@ -16,4 +16,4 @@ DROP TABLE IF EXISTS card; CREATE TABLE card (card_num VARCHAR(255) NOT NULL, ca
 
 DROP TABLE IF EXISTS loan; CREATE TABLE loan (loan_id VARCHAR(255) NOT NULL, loan_amount BIGINT NULL, loan_status ENUM('ONGOING','PAID','DEFAULT') NULL, loan_date DATETIME NULL, guarantee_valid BOOLEAN NULL, account_id VARCHAR(255) NOT NULL, item_id BIGINT NOT NULL, cl_number CHAR(13) NULL, PRIMARY KEY (loan_id));
 
-DROP TABLE IF EXISTS account; CREATE TABLE account (account_id VARCHAR(256) NOT NULL, account_number VARCHAR(30) NULL, account_type ENUM('SAVING','CHECKING','LOAN') NULL, date DATE NULL, balance BIGINT NULL, cl_id INT NOT NULL, cl_job VARCHAR(255) NULL, PRIMARY KEY (account_id));
+DROP TABLE IF EXISTS account; CREATE TABLE account (account_id BIGINT NOT NULL AUTO_INCREMENT, account_number VARCHAR(30) NULL, account_type ENUM('SAVING','CHECKING','LOAN') NULL, date DATE NULL, balance BIGINT NULL, cl_id INT NOT NULL, cl_job VARCHAR(255) NULL, PRIMARY KEY (account_id));
