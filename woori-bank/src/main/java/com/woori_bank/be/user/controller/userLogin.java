@@ -24,6 +24,11 @@ public class userLogin extends HttpServlet {
 	Logger log = LoggerFactory.getLogger(userLogin.class);
 	
 	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req, resp);
+	}
+	
+	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html;charset=UTF-8");
 		log.info("userLogin: 입장");
@@ -48,7 +53,7 @@ public class userLogin extends HttpServlet {
 	            req.setAttribute("user", loginUser);
 
 	            // main.jsp로 forward
-	            RequestDispatcher rd = req.getRequestDispatcher("/main.jsp");
+	            RequestDispatcher rd = req.getRequestDispatcher(req.getContextPath());
 	            rd.forward(req, resp);
 	            return;
 	        }
@@ -58,13 +63,13 @@ public class userLogin extends HttpServlet {
 			session.setAttribute("user", user);
 			
 			 // 로그인 후 메인 페이지 이동
-			resp.sendRedirect("main.jsp");
+			resp.sendRedirect(req.getContextPath());
 			
 		} else {
-			log.info("userLogin: user: {} 로그인 실패", user.getUserId());
+//			log.info("userLogin: user: {} 로그인 실패", user.getUserId());
 			 // 로그인 실패 처리
 	        req.setAttribute("errorMsg", "아이디 또는 비밀번호가 잘못되었습니다.");
-	        RequestDispatcher rd = req.getRequestDispatcher("/login.jsp");
+	        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/views/login.jsp");
 	        rd.forward(req, resp);
 		}
 
