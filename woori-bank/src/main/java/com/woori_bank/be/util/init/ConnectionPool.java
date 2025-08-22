@@ -1,4 +1,4 @@
-package com.woori_bank.be.util;
+package com.woori_bank.be.util.init;
 
 import java.io.FileReader;
 import java.io.IOException;

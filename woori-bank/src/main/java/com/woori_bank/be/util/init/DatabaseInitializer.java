@@ -1,4 +1,4 @@
-package com.woori_bank.be.util;
+package com.woori_bank.be.util.init;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
