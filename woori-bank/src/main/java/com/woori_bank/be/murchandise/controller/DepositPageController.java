@@ -5,8 +5,6 @@ import javax.servlet.http.*;
 import javax.servlet.*;
 import java.io.IOException;
 import java.util.*;
-import com.woori_bank.be.model.Product;
-import com.woori_bank.be.model.ProductType;
 
 @WebServlet("/products/deposit")
 public class DepositPageController extends HttpServlet {

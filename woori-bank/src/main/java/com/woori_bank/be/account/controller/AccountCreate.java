@@ -1,6 +1,7 @@
 package com.woori_bank.be.account.controller;
 
 import java.io.IOException;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,10 +11,18 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.woori_bank.be.account.model.AccountType;
+import com.woori_bank.be.account.service.AccountService;
 import com.woori_bank.be.user.model.User;
 
-@WebServlet("/account/crete")
-public class accountCreate extends HttpServlet {
+@WebServlet("/account/create")
+public class AccountCreate extends HttpServlet {
+	private static Map<AccountType, String> routes = Map.of(
+		    AccountType.LOAN, "/loan/join",
+		    AccountType.SAVING, "/deposit/join"
+		);
+	
+	
+	private static AccountService accountService;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -57,10 +66,11 @@ public class accountCreate extends HttpServlet {
         User loginUser = (User) session.getAttribute("user");
         long clientId = loginUser.getId();
         
+        long accountId = AccountService.createAccount(clientId, type);
         
-        
-        
+        String base = routes.getOrDefault(type, "/main");
+        String q = (type == AccountType.CHECKING) ? ("") : ("?accountId=" + accountId);
+        resp.sendRedirect(req.getContextPath() + base + q);
 	}
-	
 	
 }

@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.woori_bank.be.model.Product;
-import com.woori_bank.be.model.ProductType;
 
 @WebServlet("/products/loan")
 public class LoanPageController extends HttpServlet {
