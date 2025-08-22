@@ -9,7 +9,7 @@
 <body>
     <h2 style="text-align:center;">회원가입</h2>
     
-    <form action="user/signup" method="post">
+    <form action="<%=request.getContextPath()%>/user/signup" method="post">
         <div>
             <label for="id">아이디</label>
             <input type="text" name="id" id="id" placeholder="아이디 입력" required>

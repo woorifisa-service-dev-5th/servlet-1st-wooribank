@@ -19,7 +19,7 @@
         <p style="color:red;">${errorMsg}</p>
     </c:if>
     
-    <form action="user/login" method="post">
+    <form action="<%=request.getContextPath()%>/user/login" method="post">
         <div>
             <label for="id">아이디</label>
             <input type="text" name="id" id="id" placeholder="아이디 입력" required>
