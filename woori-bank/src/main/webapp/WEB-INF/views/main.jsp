@@ -36,8 +36,8 @@
 	} else {
 	%>
 	<p>
-		<a href="<%=request.getContextPath()%>/login">로그인</a> | <a
-			href="<%=request.getContextPath()%>/signup">회원가입</a>
+		<a href="<%=request.getContextPath()%>/user/login">로그인</a> | <a
+			href="<%=request.getContextPath()%>/user/signup">회원가입</a>
 	</p>
 	<p>
 		※ 상품 <u>상세/가입</u>, <u>이체</u>, <u>마이페이지</u>는 로그인 필요
