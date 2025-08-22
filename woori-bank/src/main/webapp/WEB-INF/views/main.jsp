@@ -46,6 +46,6 @@
 	}
 	%>
 	
-	<a href="<%=request.getContextPath()%>/account">계좌</a>
+	<a href="<%=request.getContextPath()%>/account/create?type=CHECKING">계좌</a>
 </body>
 </html>
