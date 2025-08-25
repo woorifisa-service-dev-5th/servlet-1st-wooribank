@@ -15,7 +15,7 @@ import com.woori_bank.be.account.service.AccountService;
 import com.woori_bank.be.user.model.User;
 
 @WebServlet("/account/create")
-public class AccountCreate extends HttpServlet {
+public class accountCreate extends HttpServlet {
 	private static Map<AccountType, String> routes = Map.of(
 		    AccountType.LOAN, "/loan/join",
 		    AccountType.SAVING, "/deposit/join"

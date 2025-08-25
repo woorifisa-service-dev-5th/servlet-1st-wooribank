@@ -15,7 +15,7 @@
 				상품 보기</a></li>
 		<li><a href="<%=request.getContextPath()%>/products/loan">대출
 				상품 보기</a></li>
-		<li><a href="<%=request.getContextPath()%>/transfer">이체(송금)
+		<li><a href="<%=request.getContextPath()%>/transaction">이체(송금)
 				하기</a></li>
 		<li><a href="<%=request.getContextPath()%>/me">마이페이지</a></li>
 	</ul>

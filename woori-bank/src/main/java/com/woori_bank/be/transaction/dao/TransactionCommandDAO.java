@@ -16,6 +16,18 @@ public class TransactionCommandDAO {
 
 	private TransactionCommandDAO() {}
 
+	public static void save(Connection conn, Transaction tx) throws SQLException {
+	    String sql = "INSERT INTO transaction (account_id, type, description, amount, date) VALUES (?, ?, ?, ?, ?)";
+	    try (PreparedStatement ps = conn.prepareStatement(sql)) {
+	        ps.setString(1, tx.getAccountId());
+	        ps.setString(2, tx.getType());
+	        ps.setString(3, tx.getDescription());
+	        ps.setLong(4, tx.getAmount().longValueExact());
+	        ps.setTimestamp(5, java.sql.Timestamp.valueOf(tx.getDate()));
+	        ps.executeUpdate();
+	    }
+	}
+	
 	public void insert(String accountId, String type, String description, BigInteger amount, LocalDateTime date) {
 		try(Connection connection = ConnectionPool.getConnection();) {
 			String INSERT_SQL = "INSERT INTO TRANSACTION(account_id, t_type, description, amount, t_date) "
